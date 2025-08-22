@@ -24,9 +24,13 @@
       "Bash(git remote set-url:*)",
       "Bash(git reset:*)",
       "Bash(rm:*)",
-      "Bash(lsof:*)"
+      "Bash(lsof:*)",
+      "Bash(git pull:*)"
     ],
     "deny": [],
-    "ask": []
+    "ask": [],
+    "additionalDirectories": [
+      "/Users/lirongxie/Downloads/GOSIM-Logos"
+    ]
   }
 }
