@@ -1,0 +1,140 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getLangFromUrl, useTranslations } from '../../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<Layout title="使用条款 - 人工智能为人类" description="人工智能为人类倡议的使用条款">
+	<div class="bg-white">
+		<!-- Header -->
+		<div class="bg-slate-50 py-16">
+			<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+				<h1 class="text-4xl font-bold text-slate-900 mb-4">使用条款</h1>
+				<p class="text-lg text-slate-600">最后更新：2025年1月</p>
+			</div>
+		</div>
+
+		<!-- Content -->
+		<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+			<div class="prose prose-lg max-w-none">
+				<h2>接受条款</h2>
+				<p>通过访问和使用 ai4humanity.ai（"网站"），您接受并同意受这些使用条款约束。如果您不同意这些条款，请不要使用本网站。</p>
+
+				<h2>关于人工智能为人类</h2>
+				<p>人工智能为人类是一个专注于通过全球合作进行负责任AI开发的协作倡议。我们提供资源，促进工作组，并推广涵盖五个关键主题的道德AI实践：负责任的AI、模型协作、AI成熟度和评估、社会经济影响和智能体AI。</p>
+
+				<h2>网站使用</h2>
+				<h3>允许的使用</h3>
+				<ul>
+					<li>为教育和信息目的访问和阅读内容</li>
+					<li>下载资源和文档用于非商业用途</li>
+					<li>参与工作组讨论和协作活动</li>
+					<li>在适当归属的情况下分享和引用我们的内容</li>
+				</ul>
+
+				<h3>禁止的使用</h3>
+				<ul>
+					<li>未经许可商业利用内容</li>
+					<li>骚扰、滥用或歧视行为</li>
+					<li>传播错误信息或有害内容</li>
+					<li>侵犯知识产权</li>
+					<li>干扰网站功能或安全</li>
+				</ul>
+
+				<h2>知识产权</h2>
+				<p>本网站的内容通常在开放协作原则下提供，但有以下考虑：</p>
+				<ul>
+					<li>人工智能为人类的原创内容可在注明出处的情况下分享</li>
+					<li>第三方内容可能有单独的许可条款</li>
+					<li>合作伙伴组织的标志和商标仍属其财产</li>
+					<li>框架文档遵循各自项目的许可证</li>
+				</ul>
+
+				<h2>用户生成内容</h2>
+				<p>当您为我们的工作组或讨论贡献内容时：</p>
+				<ul>
+					<li>您保留对贡献的所有权</li>
+					<li>您授予我们在人工智能为人类活动的背景下使用和分享您贡献的权限</li>
+					<li>您的贡献应与我们的使命和行为准则保持一致</li>
+					<li>我们保留审核和删除不当内容的权利</li>
+				</ul>
+
+				<h2>第三方服务</h2>
+				<p>我们的网站集成了第三方服务，包括：</p>
+				<ul>
+					<li>GitHub 用于代码托管和协作</li>
+					<li>Groups.io 用于讨论和工作组</li>
+					<li>合作伙伴组织网站和资源</li>
+				</ul>
+				<p>使用这些服务需遵守其各自的服务条款。</p>
+
+				<h2>免责声明</h2>
+				<h3>内容准确性</h3>
+				<p>虽然我们努力确保准确性，但内容按"原样"提供，不提供保证。AI和技术信息发展迅速，内容可能会过时。</p>
+
+				<h3>非专业建议</h3>
+				<p>本网站的内容仅供参考，不构成针对具体实施的专业、法律或技术建议。</p>
+
+				<h3>外部链接</h3>
+				<p>我们不对从我们网站链接的外部网站的内容或做法负责。</p>
+
+				<h2>责任限制</h2>
+				<p>人工智能为人类、GOSIM和合作伙伴组织不对因您使用本网站或参与我们活动而产生的任何损害承担责任，法律要求的除外。</p>
+
+				<h2>赔偿</h2>
+				<p>您同意赔偿人工智能为人类及其合作伙伴因您使用网站或违反这些条款而产生的索赔并使其免受损害。</p>
+
+				<h2>修改</h2>
+				<p>我们可能随时修改这些使用条款。继续使用网站即表示接受修改后的条款。重大变更将通过我们的沟通渠道宣布。</p>
+
+				<h2>适用法律</h2>
+				<p>这些条款受适用于国际协作倡议的法律管辖，争议通过善意协商和调解解决。</p>
+
+				<h2>联系信息</h2>
+				<p>如有关于这些使用条款的问题：</p>
+				<ul>
+					<li>加入我们的讨论：<a href="https://globaldigitalcollaboration.groups.io/g/GDC-AIForHumanity" class="text-blue-600 hover:text-blue-800">GDC-AIForHumanity</a></li>
+					<li>联系GOSIM：<a href="https://gosim.org" class="text-blue-600 hover:text-blue-800">gosim.org</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</Layout>
+
+<style>
+	.prose h2 {
+		font-size: 1.5rem;
+		font-weight: 700;
+		color: #0f172a;
+		margin-top: 2rem;
+		margin-bottom: 1rem;
+	}
+	
+	.prose h3 {
+		font-size: 1.25rem;
+		font-weight: 600;
+		color: #1e293b;
+		margin-top: 1.5rem;
+		margin-bottom: 0.75rem;
+	}
+	
+	.prose p {
+		color: #334155;
+		margin-bottom: 1rem;
+		line-height: 1.625;
+	}
+	
+	.prose ul {
+		list-style-type: disc;
+		list-style-position: inside;
+		margin-bottom: 1rem;
+		color: #334155;
+	}
+	
+	.prose li {
+		margin-left: 1rem;
+		margin-bottom: 0.5rem;
+	}
+</style>

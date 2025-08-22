@@ -1,0 +1,158 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getLangFromUrl, useTranslations } from '../../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<Layout title="行为准则 - 人工智能为人类" description="人工智能为人类社区的行为准则">
+	<div class="bg-white">
+		<!-- Header -->
+		<div class="bg-slate-50 py-16">
+			<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+				<h1 class="text-4xl font-bold text-slate-900 mb-4">行为准则</h1>
+				<p class="text-lg text-slate-600">构建包容和协作的社区</p>
+			</div>
+		</div>
+
+		<!-- Content -->
+		<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+			<div class="prose prose-lg max-w-none">
+				<h2>我们的承诺</h2>
+				<p>人工智能为人类致力于为所有参与者培养包容、尊重和协作的环境，无论背景、身份或经验水平如何。我们相信多元化的观点能够加强我们开发负责任AI系统以造福人类的使命。</p>
+
+				<h2>期望行为</h2>
+				<p>所有社区成员都应：</p>
+				<ul>
+					<li>在所有互动中保持尊重和包容</li>
+					<li>使用欢迎和专业的语言</li>
+					<li>对其他社区成员表现出同理心和善意</li>
+					<li>专注于建设性讨论和协作</li>
+					<li>优雅地给予和接受反馈</li>
+					<li>为错误承担责任并从中学习</li>
+					<li>优先考虑对整个社区和使命最有利的事情</li>
+				</ul>
+
+				<h2>不可接受的行为</h2>
+				<p>我们社区不接受以下行为：</p>
+				<ul>
+					<li>任何形式的骚扰、歧视或恐吓</li>
+					<li>人身攻击、恶意挑衅或煽动性评论</li>
+					<li>未经同意发布私人信息</li>
+					<li>垃圾邮件、过度自我推广或偏离主题的内容</li>
+					<li>分享有害、违法或鼓励暴力的内容</li>
+					<li>破坏会议、讨论或协作活动</li>
+					<li>违反知识产权或保密条款</li>
+				</ul>
+
+				<h2>多样性和包容性</h2>
+				<p>我们积极鼓励来自所有方面的个人参与：</p>
+				<ul>
+					<li>地理区域和文化背景</li>
+					<li>专业学科和经验水平</li>
+					<li>性别认同和表达</li>
+					<li>性取向</li>
+					<li>年龄和能力</li>
+					<li>种族和民族身份</li>
+					<li>宗教和哲学信仰</li>
+					<li>社会经济背景</li>
+				</ul>
+
+				<h2>负责任的AI原则</h2>
+				<p>作为一个专注于AI的社区，我们还承诺：</p>
+				<ul>
+					<li>促进AI系统的透明度和可解释性</li>
+					<li>解决偏见并确保AI应用的公平性</li>
+					<li>保护隐私和数据权利</li>
+					<li>考虑社会影响和意外后果</li>
+					<li>支持开放科学和协作开发</li>
+					<li>倡导造福全人类的AI</li>
+				</ul>
+
+				<h2>执行</h2>
+				<h3>举报</h3>
+				<p>如果您经历或目睹违反本行为准则的行为：</p>
+				<ul>
+					<li>通过我们的主要讨论组举报：<a href="https://globaldigitalcollaboration.groups.io/g/GDC-AIForHumanity" class="text-blue-600 hover:text-blue-800">GDC-AIForHumanity</a></li>
+					<li>直接联系工作组主持人</li>
+					<li>通过<a href="https://gosim.org" class="text-blue-600 hover:text-blue-800">gosim.org</a>联系GOSIM组织者</li>
+				</ul>
+
+				<h3>响应流程</h3>
+				<p>收到违规举报时，我们将：</p>
+				<ul>
+					<li>及时、保密地审查举报</li>
+					<li>与所有相关方公平调查</li>
+					<li>采取适当的纠正措施</li>
+					<li>向相关方沟通解决方案</li>
+					<li>监控以防止报复</li>
+				</ul>
+
+				<h3>后果</h3>
+				<p>违规行为可能导致：</p>
+				<ul>
+					<li>警告和要求改变行为</li>
+					<li>暂时停止参与讨论或活动</li>
+					<li>永久移除出社区空间</li>
+					<li>必要时升级到相关当局</li>
+				</ul>
+
+				<h2>全球考虑</h2>
+				<p>作为一个国际社区，我们认识到：</p>
+				<ul>
+					<li>沟通方式的文化差异</li>
+					<li>语言障碍和翻译挑战</li>
+					<li>不同的法律和监管框架</li>
+					<li>全球参与的时区考虑</li>
+					<li>影响资源获取的经济差异</li>
+				</ul>
+				<p>我们努力在保持核心价值的同时保持包容和适应性。</p>
+
+				<h2>归属</h2>
+				<p>本行为准则改编自广泛使用的社区标准，包括<a href="https://www.contributor-covenant.org/" class="text-blue-600 hover:text-blue-800">贡献者公约</a>，并融入了领先AI伦理框架的原则。</p>
+
+				<h2>更新</h2>
+				<p>本行为准则可能会定期更新，以反映社区发展和不断发展的最佳实践。重大变更将传达给所有社区成员。</p>
+
+				<p class="text-sm text-slate-500 mt-8">最后更新：2025年1月</p>
+			</div>
+		</div>
+	</div>
+</Layout>
+
+<style>
+	.prose h2 {
+		font-size: 1.5rem;
+		font-weight: 700;
+		color: #0f172a;
+		margin-top: 2rem;
+		margin-bottom: 1rem;
+	}
+	
+	.prose h3 {
+		font-size: 1.25rem;
+		font-weight: 600;
+		color: #1e293b;
+		margin-top: 1.5rem;
+		margin-bottom: 0.75rem;
+	}
+	
+	.prose p {
+		color: #334155;
+		margin-bottom: 1rem;
+		line-height: 1.625;
+	}
+	
+	.prose ul {
+		list-style-type: disc;
+		list-style-position: inside;
+		margin-bottom: 1rem;
+		color: #334155;
+	}
+	
+	.prose li {
+		margin-left: 1rem;
+		margin-bottom: 0.5rem;
+	}
+</style>

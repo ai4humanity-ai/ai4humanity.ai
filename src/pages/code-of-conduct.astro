@@ -1,0 +1,158 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<Layout title="Code of Conduct - AI for Humanity" description="Code of conduct for the AI for Humanity community">
+	<div class="bg-white">
+		<!-- Header -->
+		<div class="bg-slate-50 py-16">
+			<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+				<h1 class="text-4xl font-bold text-slate-900 mb-4">Code of Conduct</h1>
+				<p class="text-lg text-slate-600">Building an inclusive and collaborative community</p>
+			</div>
+		</div>
+
+		<!-- Content -->
+		<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+			<div class="prose prose-lg max-w-none">
+				<h2>Our Commitment</h2>
+				<p>AI for Humanity is committed to fostering an inclusive, respectful, and collaborative environment for all participants, regardless of background, identity, or experience level. We believe diverse perspectives strengthen our mission to develop responsible AI systems for the benefit of humanity.</p>
+
+				<h2>Expected Behavior</h2>
+				<p>All community members are expected to:</p>
+				<ul>
+					<li>Be respectful and inclusive in all interactions</li>
+					<li>Use welcoming and professional language</li>
+					<li>Show empathy and kindness toward other community members</li>
+					<li>Focus on constructive discussions and collaboration</li>
+					<li>Give and receive feedback gracefully</li>
+					<li>Accept responsibility for mistakes and learn from them</li>
+					<li>Prioritize what is best for the overall community and mission</li>
+				</ul>
+
+				<h2>Unacceptable Behavior</h2>
+				<p>The following behaviors are unacceptable in our community:</p>
+				<ul>
+					<li>Harassment, discrimination, or intimidation of any form</li>
+					<li>Personal attacks, trolling, or inflammatory comments</li>
+					<li>Publishing private information without consent</li>
+					<li>Spam, excessive self-promotion, or off-topic content</li>
+					<li>Sharing content that is harmful, illegal, or promotes violence</li>
+					<li>Disrupting meetings, discussions, or collaborative activities</li>
+					<li>Violations of intellectual property or confidentiality</li>
+				</ul>
+
+				<h2>Diversity and Inclusion</h2>
+				<p>We actively encourage participation from individuals across all:</p>
+				<ul>
+					<li>Geographic regions and cultural backgrounds</li>
+					<li>Professional disciplines and experience levels</li>
+					<li>Gender identities and expressions</li>
+					<li>Sexual orientations</li>
+					<li>Ages and abilities</li>
+					<li>Racial and ethnic identities</li>
+					<li>Religious and philosophical beliefs</li>
+					<li>Socioeconomic backgrounds</li>
+				</ul>
+
+				<h2>Responsible AI Principles</h2>
+				<p>As an AI-focused community, we also commit to:</p>
+				<ul>
+					<li>Promoting transparency and explainability in AI systems</li>
+					<li>Addressing bias and ensuring fairness in AI applications</li>
+					<li>Protecting privacy and data rights</li>
+					<li>Considering societal impact and unintended consequences</li>
+					<li>Supporting open science and collaborative development</li>
+					<li>Advocating for AI that benefits all of humanity</li>
+				</ul>
+
+				<h2>Enforcement</h2>
+				<h3>Reporting</h3>
+				<p>If you experience or witness behavior that violates this Code of Conduct:</p>
+				<ul>
+					<li>Report through our main discussion group: <a href="https://globaldigitalcollaboration.groups.io/g/GDC-AIForHumanity" class="text-blue-600 hover:text-blue-800">GDC-AIForHumanity</a></li>
+					<li>Contact working group moderators directly</li>
+					<li>Reach out to GOSIM organizers through <a href="https://gosim.org" class="text-blue-600 hover:text-blue-800">gosim.org</a></li>
+				</ul>
+
+				<h3>Response Process</h3>
+				<p>When violations are reported, we will:</p>
+				<ul>
+					<li>Review reports promptly and confidentially</li>
+					<li>Investigate fairly with all relevant parties</li>
+					<li>Take appropriate corrective action</li>
+					<li>Communicate resolution to involved parties</li>
+					<li>Monitor to prevent retaliation</li>
+				</ul>
+
+				<h3>Consequences</h3>
+				<p>Violations may result in:</p>
+				<ul>
+					<li>Warning and request for behavior change</li>
+					<li>Temporary suspension from discussions or activities</li>
+					<li>Permanent removal from community spaces</li>
+					<li>Escalation to relevant authorities if necessary</li>
+				</ul>
+
+				<h2>Global Considerations</h2>
+				<p>As an international community, we recognize:</p>
+				<ul>
+					<li>Cultural differences in communication styles</li>
+					<li>Language barriers and translation challenges</li>
+					<li>Varying legal and regulatory frameworks</li>
+					<li>Time zone considerations for global participation</li>
+					<li>Economic disparities affecting access to resources</li>
+				</ul>
+				<p>We strive to be inclusive and accommodating while maintaining our core values.</p>
+
+				<h2>Attribution</h2>
+				<p>This Code of Conduct is adapted from widely-used community standards including the <a href="https://www.contributor-covenant.org/" class="text-blue-600 hover:text-blue-800">Contributor Covenant</a> and incorporates principles from leading AI ethics frameworks.</p>
+
+				<h2>Updates</h2>
+				<p>This Code of Conduct may be updated periodically to reflect community growth and evolving best practices. Significant changes will be communicated to all community members.</p>
+
+				<p class="text-sm text-slate-500 mt-8">Last updated: January 2025</p>
+			</div>
+		</div>
+	</div>
+</Layout>
+
+<style>
+	.prose h2 {
+		font-size: 1.5rem;
+		font-weight: 700;
+		color: #0f172a;
+		margin-top: 2rem;
+		margin-bottom: 1rem;
+	}
+	
+	.prose h3 {
+		font-size: 1.25rem;
+		font-weight: 600;
+		color: #1e293b;
+		margin-top: 1.5rem;
+		margin-bottom: 0.75rem;
+	}
+	
+	.prose p {
+		color: #334155;
+		margin-bottom: 1rem;
+		line-height: 1.625;
+	}
+	
+	.prose ul {
+		list-style-type: disc;
+		list-style-position: inside;
+		margin-bottom: 1rem;
+		color: #334155;
+	}
+	
+	.prose li {
+		margin-left: 1rem;
+		margin-bottom: 0.5rem;
+	}
+</style>
