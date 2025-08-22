@@ -15,7 +15,15 @@
       "Bash(unzip:*)",
       "WebFetch(domain:gosim.org)",
       "WebFetch(domain:genaicommons.org)",
-      "Bash(pkill:*)"
+      "Bash(pkill:*)",
+      "Bash(git add:*)",
+      "Bash(git remote add:*)",
+      "Bash(git commit:*)",
+      "Bash(git push:*)",
+      "Bash(ssh:*)",
+      "Bash(git remote set-url:*)",
+      "Bash(git reset:*)",
+      "Bash(rm:*)"
     ],
     "deny": [],
     "ask": []
