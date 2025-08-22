@@ -1,0 +1,54 @@
+---
+import { languages } from '../i18n/ui';
+import { getLangFromUrl, getLocalizedPath, removeLocaleFromPath } from '../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const currentPath = removeLocaleFromPath(Astro.url.pathname);
+---
+
+<div class="relative group">
+  <button class="flex items-center space-x-2 px-3 py-2 text-sm text-slate-700 hover:text-slate-900 transition-colors" id="language-toggle">
+    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129"></path>
+    </svg>
+    <span>{languages[lang]}</span>
+    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 9-7 7-7-7"></path>
+    </svg>
+  </button>
+  
+  <div class="absolute right-0 mt-2 w-20 bg-white rounded-lg shadow-lg border border-slate-200 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50" id="language-menu">
+    {Object.entries(languages).map(([langCode, langName]) => (
+      <a 
+        href={getLocalizedPath(currentPath, langCode)}
+        class={`block px-3 py-2 text-sm hover:bg-slate-50 transition-colors first:rounded-t-lg last:rounded-b-lg text-center ${
+          lang === langCode ? 'bg-blue-50 text-blue-600 font-medium' : 'text-slate-700'
+        }`}
+      >
+        {langName}
+      </a>
+    ))}
+  </div>
+</div>
+
+<script>
+  // Enhanced mobile support
+  const toggle = document.getElementById('language-toggle');
+  const menu = document.getElementById('language-menu');
+  
+  if (toggle && menu) {
+    toggle.addEventListener('click', (e) => {
+      e.preventDefault();
+      menu.classList.toggle('opacity-0');
+      menu.classList.toggle('invisible');
+    });
+    
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!toggle.contains(e.target) && !menu.contains(e.target)) {
+        menu.classList.add('opacity-0');
+        menu.classList.add('invisible');
+      }
+    });
+  }
+</script>

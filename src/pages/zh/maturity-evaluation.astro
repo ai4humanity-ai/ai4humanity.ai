@@ -1,0 +1,308 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout title="成熟度评估 - 人工智能为人类" description="AI系统能力的评估框架、基准标准和成熟度模型。">
+	<!-- Hero Section -->
+	<section class="relative bg-gradient-to-br from-orange-900 via-orange-700 to-orange-600 text-white overflow-hidden">
+		<div class="absolute inset-0 bg-black opacity-10"></div>
+		<div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
+			<div class="text-center">
+				<div class="w-16 h-16 bg-orange-100 rounded-xl flex items-center justify-center mx-auto mb-6">
+					<svg class="w-8 h-8 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+					</svg>
+				</div>
+				<h1 class="text-4xl sm:text-5xl font-bold mb-6">成熟度评估</h1>
+				<p class="text-xl text-orange-100 max-w-3xl mx-auto">
+					评估框架、基准标准和成熟度模型，用于测量AI系统的能力、可靠性和就绪程度。
+				</p>
+			</div>
+		</div>
+	</section>
+
+	<!-- Overview -->
+	<section class="py-16 bg-white">
+		<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+			<h2 class="text-3xl font-bold text-slate-900 mb-8 text-center">AI能力的系统性评估</h2>
+			<p class="text-lg text-slate-700 leading-relaxed mb-8">
+				AI成熟度评估提供结构化的方法来测量、比较和改进人工智能系统。通过标准化的框架和严格的测试方法，我们可以确保AI技术达到部署和集成到关键应用中的必要标准。
+			</p>
+		</div>
+	</section>
+
+	<!-- OpenAI 5-Level Framework -->
+	<section class="py-16 bg-slate-50">
+		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+			<h2 class="text-3xl font-bold text-slate-900 mb-12 text-center">OpenAI的5级AI成熟度框架</h2>
+			
+			<div class="bg-gradient-to-r from-blue-50 to-orange-50 rounded-xl p-8 mb-8">
+				<h3 class="text-2xl font-bold text-slate-900 mb-4">从聊天机器人到AGI的渐进路径</h3>
+				<p class="text-slate-700 mb-6">
+					OpenAI的框架提供了AI能力发展的清晰路线图，从当前的聊天机器人到未来的人工通用智能(AGI)。
+				</p>
+			</div>
+
+			<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+				<div class="bg-white rounded-xl p-6 shadow-lg border-l-4 border-green-400">
+					<div class="flex items-center mb-4">
+						<div class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center mr-3">
+							<span class="text-green-600 font-bold text-sm">L1</span>
+						</div>
+						<h3 class="text-lg font-bold text-slate-900">聊天机器人</h3>
+					</div>
+					<p class="text-slate-600 text-sm mb-3">
+						具有对话能力的AI，可以进行自然语言交流和基本任务执行。
+					</p>
+					<div class="text-xs text-green-600 font-semibold">当前状态：已实现</div>
+				</div>
+
+				<div class="bg-white rounded-xl p-6 shadow-lg border-l-4 border-blue-400">
+					<div class="flex items-center mb-4">
+						<div class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center mr-3">
+							<span class="text-blue-600 font-bold text-sm">L2</span>
+						</div>
+						<h3 class="text-lg font-bold text-slate-900">推理者</h3>
+					</div>
+					<p class="text-slate-600 text-sm mb-3">
+						能够执行基础推理和问题解决的AI系统，相当于受过教育的人类。
+					</p>
+					<div class="text-xs text-blue-600 font-semibold">当前状态：部分实现</div>
+				</div>
+
+				<div class="bg-white rounded-xl p-6 shadow-lg border-l-4 border-yellow-400">
+					<div class="flex items-center mb-4">
+						<div class="w-8 h-8 bg-yellow-100 rounded-full flex items-center justify-center mr-3">
+							<span class="text-yellow-600 font-bold text-sm">L3</span>
+						</div>
+						<h3 class="text-lg font-bold text-slate-900">代理</h3>
+					</div>
+					<p class="text-slate-600 text-sm mb-3">
+						能够代表用户执行操作和任务的AI系统，具有一定程度的自主性。
+					</p>
+					<div class="text-xs text-yellow-600 font-semibold">当前状态：开发中</div>
+				</div>
+
+				<div class="bg-white rounded-xl p-6 shadow-lg border-l-4 border-orange-400">
+					<div class="flex items-center mb-4">
+						<div class="w-8 h-8 bg-orange-100 rounded-full flex items-center justify-center mr-3">
+							<span class="text-orange-600 font-bold text-sm">L4</span>
+						</div>
+						<h3 class="text-lg font-bold text-slate-900">创新者</h3>
+					</div>
+					<p class="text-slate-600 text-sm mb-3">
+						能够协助发明和发现的AI，扩展人类知识和创造能力的边界。
+					</p>
+					<div class="text-xs text-orange-600 font-semibold">当前状态：研究阶段</div>
+				</div>
+
+				<div class="bg-white rounded-xl p-6 shadow-lg border-l-4 border-red-400">
+					<div class="flex items-center mb-4">
+						<div class="w-8 h-8 bg-red-100 rounded-full flex items-center justify-center mr-3">
+							<span class="text-red-600 font-bold text-sm">L5</span>
+						</div>
+						<h3 class="text-lg font-bold text-slate-900">组织</h3>
+					</div>
+					<p class="text-slate-600 text-sm mb-3">
+						完全自主的AI，能够执行组织的所有工作，相当于人工通用智能(AGI)。
+					</p>
+					<div class="text-xs text-red-600 font-semibold">当前状态：理论阶段</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Current Challenges -->
+	<section class="py-16 bg-white">
+		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+			<h2 class="text-3xl font-bold text-slate-900 mb-12 text-center">当前AI挑战与限制</h2>
+			
+			<div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+				<div class="bg-red-50 rounded-xl p-8">
+					<h3 class="text-2xl font-bold text-slate-900 mb-6">技术限制</h3>
+					<div class="space-y-4">
+						<div class="flex items-start space-x-3">
+							<div class="w-2 h-2 bg-red-500 rounded-full mt-2"></div>
+							<div>
+								<h4 class="font-semibold text-slate-900">幻觉和不准确性</h4>
+								<p class="text-sm text-slate-600">AI模型有时会生成看似合理但实际错误的信息</p>
+							</div>
+						</div>
+						<div class="flex items-start space-x-3">
+							<div class="w-2 h-2 bg-red-500 rounded-full mt-2"></div>
+							<div>
+								<h4 class="font-semibold text-slate-900">上下文理解限制</h4>
+								<p class="text-sm text-slate-600">难以保持长期对话和复杂推理链的一致性</p>
+							</div>
+						</div>
+						<div class="flex items-start space-x-3">
+							<div class="w-2 h-2 bg-red-500 rounded-full mt-2"></div>
+							<div>
+								<h4 class="font-semibold text-slate-900">计算资源需求</h4>
+								<p class="text-sm text-slate-600">大型模型需要大量的计算能力和能源消耗</p>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="bg-blue-50 rounded-xl p-8">
+					<h3 class="text-2xl font-bold text-slate-900 mb-6">评估挑战</h3>
+					<div class="space-y-4">
+						<div class="flex items-start space-x-3">
+							<div class="w-2 h-2 bg-blue-500 rounded-full mt-2"></div>
+							<div>
+								<h4 class="font-semibold text-slate-900">基准测试的局限性</h4>
+								<p class="text-sm text-slate-600">现有基准可能无法全面反映真实世界的表现</p>
+							</div>
+						</div>
+						<div class="flex items-start space-x-3">
+							<div class="w-2 h-2 bg-blue-500 rounded-full mt-2"></div>
+							<div>
+								<h4 class="font-semibold text-slate-900">标准化缺失</h4>
+								<p class="text-sm text-slate-600">缺乏统一的评估标准和度量方法</p>
+							</div>
+						</div>
+						<div class="flex items-start space-x-3">
+							<div class="w-2 h-2 bg-blue-500 rounded-full mt-2"></div>
+							<div>
+								<h4 class="font-semibold text-slate-900">动态评估需求</h4>
+								<p class="text-sm text-slate-600">AI能力快速发展，需要不断更新评估方法</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- IEEE Standards -->
+	<section class="py-16 bg-slate-50">
+		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+			<h2 class="text-3xl font-bold text-slate-900 mb-12 text-center">IEEE AI级别工作组（P3514）</h2>
+			
+			<div class="bg-white rounded-xl p-8 shadow-lg mb-8">
+				<h3 class="text-2xl font-bold text-slate-900 mb-4">标准化AI能力级别</h3>
+				<p class="text-slate-700 mb-6">
+					IEEE P3514工作组致力于制定AI系统能力级别的国际标准，为行业提供一致的评估框架。
+				</p>
+				
+				<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+					<div>
+						<h4 class="text-lg font-semibold text-slate-900 mb-3">标准目标</h4>
+						<ul class="space-y-2 text-slate-600">
+							<li class="flex items-center space-x-2">
+								<svg class="w-4 h-4 text-emerald-500" fill="currentColor" viewBox="0 0 20 20">
+									<path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+								</svg>
+								<span>定义清晰的AI能力级别</span>
+							</li>
+							<li class="flex items-center space-x-2">
+								<svg class="w-4 h-4 text-emerald-500" fill="currentColor" viewBox="0 0 20 20">
+									<path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+								</svg>
+								<span>建立通用评估方法</span>
+							</li>
+							<li class="flex items-center space-x-2">
+								<svg class="w-4 h-4 text-emerald-500" fill="currentColor" viewBox="0 0 20 20">
+									<path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+								</svg>
+								<span>促进行业标准化</span>
+							</li>
+							<li class="flex items-center space-x-2">
+								<svg class="w-4 h-4 text-emerald-500" fill="currentColor" viewBox="0 0 20 20">
+									<path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+								</svg>
+								<span>支持监管和政策制定</span>
+							</li>
+						</ul>
+					</div>
+					<div>
+						<h4 class="text-lg font-semibold text-slate-900 mb-3">关键特性</h4>
+						<ul class="space-y-2 text-slate-600">
+							<li class="flex items-center space-x-2">
+								<div class="w-2 h-2 bg-blue-500 rounded-full"></div>
+								<span>分层能力模型</span>
+							</li>
+							<li class="flex items-center space-x-2">
+								<div class="w-2 h-2 bg-blue-500 rounded-full"></div>
+								<span>可测量的性能指标</span>
+							</li>
+							<li class="flex items-center space-x-2">
+								<div class="w-2 h-2 bg-blue-500 rounded-full"></div>
+								<span>跨领域适用性</span>
+							</li>
+							<li class="flex items-center space-x-2">
+								<div class="w-2 h-2 bg-blue-500 rounded-full"></div>
+								<span>定期更新机制</span>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- International Testing Collaboration -->
+	<section class="py-16 bg-white">
+		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+			<h2 class="text-3xl font-bold text-slate-900 mb-12 text-center">国际AI测试协作</h2>
+			
+			<div class="bg-gradient-to-br from-purple-50 to-blue-50 rounded-xl p-8">
+				<h3 class="text-2xl font-bold text-slate-900 mb-6">全球测试网络的必要性</h3>
+				<p class="text-slate-700 mb-8">
+					建立国际合作框架对于确保AI系统在不同文化、语言和应用环境中的可靠性至关重要。
+				</p>
+				
+				<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+					<div class="bg-white rounded-lg p-6 text-center">
+						<div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mx-auto mb-4">
+							<svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9v-9m0-9v9"></path>
+							</svg>
+						</div>
+						<h4 class="font-bold text-slate-900 mb-2">跨文化测试</h4>
+						<p class="text-sm text-slate-600">确保AI系统在不同文化背景下的适当表现</p>
+					</div>
+					
+					<div class="bg-white rounded-lg p-6 text-center">
+						<div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mx-auto mb-4">
+							<svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+							</svg>
+						</div>
+						<h4 class="font-bold text-slate-900 mb-2">实时协作</h4>
+						<p class="text-sm text-slate-600">全球研究机构间的实时测试数据共享</p>
+					</div>
+					
+					<div class="bg-white rounded-lg p-6 text-center">
+						<div class="w-12 h-12 bg-emerald-100 rounded-lg flex items-center justify-center mx-auto mb-4">
+							<svg class="w-6 h-6 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+							</svg>
+						</div>
+						<h4 class="font-bold text-slate-900 mb-2">标准验证</h4>
+						<p class="text-sm text-slate-600">通过多方验证确保测试结果的可信度</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Call to Action -->
+	<section class="py-16 bg-orange-900 text-white">
+		<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+			<h2 class="text-3xl font-bold mb-6">参与AI成熟度评估</h2>
+			<p class="text-xl text-orange-100 mb-8">
+				为建立全面、可靠的AI评估标准和框架做出贡献。
+			</p>
+			<div class="flex flex-col sm:flex-row gap-4 justify-center">
+				<a href="https://globaldigitalcollaboration.groups.io/g/GDC-AIForHumanity-MaturityEvaluation" target="_blank" rel="noopener noreferrer" class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-semibold transition-colors">
+					加入评估讨论
+				</a>
+				<a href="https://standards.ieee.org/ieee/3514/10734/" target="_blank" rel="noopener noreferrer" class="border-2 border-white text-white hover:bg-white hover:text-orange-900 px-8 py-3 rounded-lg font-semibold transition-colors">
+					查看IEEE P3514
+				</a>
+			</div>
+		</div>
+	</section>
+</Layout>

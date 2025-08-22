@@ -1,0 +1,843 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { getLangFromUrl, useTranslations, getLocalizedPath } from '../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<Layout title={t('site.title')} description={t('site.description')}>
+	<!-- Hero Section -->
+	<section class="relative bg-gradient-to-br from-blue-900 via-blue-800 to-emerald-700 text-white overflow-hidden">
+		<div class="absolute inset-0 bg-black opacity-20"></div>
+		<div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32">
+			<div class="text-center">
+				<h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6" set:html={t('hero.title').replace('Humanity', '<span class="text-emerald-300">Humanity</span>')}>
+				</h1>
+				<p class="text-xl sm:text-2xl mb-8 text-blue-100 max-w-4xl mx-auto leading-relaxed">
+					{t('hero.subtitle')}
+				</p>
+				<div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
+					<a href="#themes" class="bg-emerald-600 hover:bg-emerald-700 text-white px-8 py-3 rounded-lg font-semibold transition-all duration-300 btn-interactive transform hover:scale-105">
+						{t('hero.cta')}
+					</a>
+					<a href="#collaboration" class="border-2 border-white text-white hover:bg-white hover:text-blue-900 px-8 py-3 rounded-lg font-semibold transition-all duration-300 btn-interactive transform hover:scale-105">
+						Join Working Groups
+					</a>
+				</div>
+				<div class="flex flex-col sm:flex-row gap-3 justify-center items-center mb-8">
+					<a href="#resources" class="text-blue-200 hover:text-white underline transition-colors">
+						📄 Download Resources
+					</a>
+					<span class="text-blue-300">•</span>
+					<a href="#newsletter" class="text-blue-200 hover:text-white underline transition-colors">
+						📧 Stay Updated
+					</a>
+					<span class="text-blue-300">•</span>
+					<a href="https://globaldigitalcollaboration.groups.io/g/GDC-AIForHumanity" target="_blank" rel="noopener noreferrer" class="text-blue-200 hover:text-white underline transition-colors">
+						💬 Join Discussion
+					</a>
+				</div>
+				<div class="text-sm text-blue-200">
+					<p>Based on insights from the 2025 <a href="https://globaldigitalcollaboration.org/" target="_blank" rel="noopener noreferrer" class="text-blue-100 hover:text-white underline">Global Digital Collaboration Conference</a></p>
+					<p class="mt-1">Sponsored by <strong><a href="https://gosim.org/" target="_blank" rel="noopener noreferrer" class="text-blue-100 hover:text-white underline">Global Open Source Innovation Meetup (GOSIM)</a></strong></p>
+				</div>
+			</div>
+		</div>
+		
+		<!-- Animated background elements -->
+		<div class="absolute top-0 left-0 w-full h-full pointer-events-none">
+			<div class="absolute top-20 left-10 w-64 h-64 bg-emerald-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse"></div>
+			<div class="absolute top-40 right-10 w-64 h-64 bg-blue-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse animation-delay-2000"></div>
+			<div class="absolute bottom-20 left-1/2 w-64 h-64 bg-orange-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse animation-delay-4000"></div>
+		</div>
+	</section>
+
+	<!-- Mission Statement -->
+	<section class="py-16 bg-slate-50">
+		<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center scroll-animate">
+			<h2 class="text-3xl sm:text-4xl font-bold text-slate-900 mb-6">{t('mission.title')}</h2>
+			<p class="text-lg text-slate-700 leading-relaxed">
+				{t('mission.description')}
+			</p>
+		</div>
+	</section>
+
+	<!-- Executive Summary -->
+	<section class="py-20 bg-white">
+		<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 scroll-animate">
+			<div class="text-center mb-16">
+				<h2 class="text-3xl sm:text-4xl font-bold text-slate-900 mb-4">{t('executive.title')}</h2>
+				<p class="text-lg text-slate-600 max-w-3xl mx-auto">
+					{t('executive.subtitle').replace('2025 Global Digital Collaboration Conference', '<a href="https://globaldigitalcollaboration.org/" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800 underline">2025 Global Digital Collaboration Conference</a>')}
+				</p>
+			</div>
+			
+			<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+				<!-- Responsible AI Summary -->
+				<div class="bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl p-6 border border-blue-200">
+					<div class="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center mb-4">
+						<svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+						</svg>
+					</div>
+					<h3 class="text-xl font-bold text-blue-900 mb-3">Responsible AI</h3>
+					<ul class="text-slate-700 text-sm space-y-2">
+						<li>• Technical and governance imperative</li>
+						<li>• Nine dimensions: transparency, privacy, accountability, safety, inclusion, sustainability</li>
+						<li>• Need machine-readable standards, open tools, and cross-sector coordination</li>
+					</ul>
+				</div>
+
+				<!-- Model Collaboration Summary -->
+				<div class="bg-gradient-to-br from-emerald-50 to-emerald-100 rounded-xl p-6 border border-emerald-200">
+					<div class="w-12 h-12 bg-emerald-600 rounded-lg flex items-center justify-center mb-4">
+						<svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+						</svg>
+					</div>
+					<h3 class="text-xl font-bold text-emerald-900 mb-3">Model Collaboration & Openness</h3>
+					<ul class="text-slate-700 text-sm space-y-2">
+						<li>• Counter 'open-washing' with verifiable openness across models, data, and compute</li>
+						<li>• Adopt permissive licensing and Model Openness Framework (Class I–III)</li>
+						<li>• Broaden access to datasets and compute; preserve linguistic/cultural diversity</li>
+					</ul>
+				</div>
+
+				<!-- Maturity & Evaluation Summary -->
+				<div class="bg-gradient-to-br from-orange-50 to-orange-100 rounded-xl p-6 border border-orange-200">
+					<div class="w-12 h-12 bg-orange-600 rounded-lg flex items-center justify-center mb-4">
+						<svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+						</svg>
+					</div>
+					<h3 class="text-xl font-bold text-orange-900 mb-3">Maturity & Evaluation</h3>
+					<ul class="text-slate-700 text-sm space-y-2">
+						<li>• AI maturity and evaluation remain fragmented; focus on human-centered value</li>
+						<li>• Standardize audits/testing; context-aware metrics and open tools</li>
+						<li>• Prioritize real-world impact over hype; augment humans vs. blind automation</li>
+					</ul>
+				</div>
+
+				<!-- Social & Economic Impact Summary -->
+				<div class="bg-gradient-to-br from-purple-50 to-purple-100 rounded-xl p-6 border border-purple-200">
+					<div class="w-12 h-12 bg-purple-600 rounded-lg flex items-center justify-center mb-4">
+						<svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+						</svg>
+					</div>
+					<h3 class="text-xl font-bold text-purple-900 mb-3">Social & Economic Impact</h3>
+					<ul class="text-slate-700 text-sm space-y-2">
+						<li>• Tackle inequities in access, talent, and infrastructure—especially in the Global South</li>
+						<li>• Leverage open systems to reduce information asymmetries</li>
+						<li>• Finance and climate use-cases need transparent, non–black-box approaches</li>
+					</ul>
+				</div>
+
+				<!-- Agentic AI Summary -->
+				<div class="bg-gradient-to-br from-red-50 to-red-100 rounded-xl p-6 border border-red-200">
+					<div class="w-12 h-12 bg-red-600 rounded-lg flex items-center justify-center mb-4">
+						<svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+						</svg>
+					</div>
+					<h3 class="text-xl font-bold text-red-900 mb-3">Agentic AI & Trust</h3>
+					<ul class="text-slate-700 text-sm space-y-2">
+						<li>• Agents amplify risks (misinfo, identity spoofing, unauthorized actions)</li>
+						<li>• Build trust via identity, provenance (C2PA), content credentials, and standards</li>
+						<li>• Architect for accountability, oversight, and secure delegation</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Five Key Themes -->
+	<section id="themes" class="py-20 bg-white">
+		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 scroll-animate">
+			<div class="text-center mb-16">
+				<h2 class="text-3xl sm:text-4xl font-bold text-slate-900 mb-4">{t('themes.title')}</h2>
+				<p class="text-lg text-slate-600 max-w-3xl mx-auto">
+					{t('hero.description')}
+				</p>
+			</div>
+
+			<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+				<!-- Responsible AI -->
+				<div class="bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl p-8 hover-lift scroll-animate transition-all duration-300">
+					<div class="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center mb-6">
+						<svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+						</svg>
+					</div>
+					<h3 class="text-xl font-bold text-slate-900 mb-4">{t('theme.responsible.title')}</h3>
+					<p class="text-slate-700 mb-6">
+						{t('theme.responsible.description')}
+					</p>
+					<a href={getLocalizedPath('/responsible-ai', lang)} class="text-blue-600 hover:text-blue-800 font-semibold transition-colors">
+						Learn More →
+					</a>
+				</div>
+
+				<!-- Model Collaboration -->
+				<div class="bg-gradient-to-br from-emerald-50 to-emerald-100 rounded-xl p-8 hover-lift scroll-animate transition-all duration-300">
+					<div class="w-12 h-12 bg-emerald-600 rounded-lg flex items-center justify-center mb-6">
+						<svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+						</svg>
+					</div>
+					<h3 class="text-xl font-bold text-slate-900 mb-4">Model Collaboration</h3>
+					<p class="text-slate-700 mb-6">
+						Open models, data accessibility, and collaborative development 
+						for democratizing AI globally.
+					</p>
+					<a href="/model-collaboration" class="text-emerald-600 hover:text-emerald-800 font-semibold transition-colors">
+						Learn More →
+					</a>
+				</div>
+
+				<!-- Maturity and Evaluation -->
+				<div class="bg-gradient-to-br from-orange-50 to-orange-100 rounded-xl p-8 hover-lift scroll-animate transition-all duration-300">
+					<div class="w-12 h-12 bg-orange-600 rounded-lg flex items-center justify-center mb-6">
+						<svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+						</svg>
+					</div>
+					<h3 class="text-xl font-bold text-slate-900 mb-4">Maturity & Evaluation</h3>
+					<p class="text-slate-700 mb-6">
+						Assessment frameworks, benchmarking standards, and maturity 
+						models for AI systems.
+					</p>
+					<a href="/maturity-evaluation" class="text-orange-600 hover:text-orange-800 font-semibold transition-colors">
+						Learn More →
+					</a>
+				</div>
+
+				<!-- Social and Economic Impact -->
+				<div class="bg-gradient-to-br from-purple-50 to-purple-100 rounded-xl p-8 hover-lift scroll-animate transition-all duration-300 md:col-span-2 lg:col-span-1">
+					<div class="w-12 h-12 bg-purple-600 rounded-lg flex items-center justify-center mb-6">
+						<svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+						</svg>
+					</div>
+					<h3 class="text-xl font-bold text-slate-900 mb-4">Social & Economic Impact</h3>
+					<p class="text-slate-700 mb-6">
+						Labor implications, equity considerations, and economic effects 
+						of AI deployment across societies.
+					</p>
+					<a href="/social-economic" class="text-purple-600 hover:text-purple-800 font-semibold transition-colors">
+						Learn More →
+					</a>
+				</div>
+
+				<!-- Agentic AI -->
+				<div class="bg-gradient-to-br from-red-50 to-red-100 rounded-xl p-8 hover-lift scroll-animate transition-all duration-300 md:col-span-2 lg:col-span-1">
+					<div class="w-12 h-12 bg-red-600 rounded-lg flex items-center justify-center mb-6">
+						<svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+						</svg>
+					</div>
+					<h3 class="text-xl font-bold text-slate-900 mb-4">Agentic AI</h3>
+					<p class="text-slate-700 mb-6">
+						Autonomous AI systems, trust protocols, security frameworks, 
+						and human-AI interaction patterns.
+					</p>
+					<a href="/agentic-ai" class="text-red-600 hover:text-red-800 font-semibold transition-colors">
+						Learn More →
+					</a>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Session Key Points -->
+	<section class="py-20 bg-slate-100">
+		<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 scroll-animate">
+			<div class="text-center mb-16">
+				<h2 class="text-3xl sm:text-4xl font-bold text-slate-900 mb-4">{t('session.key.points')}</h2>
+				<p class="text-lg text-slate-600 max-w-3xl mx-auto">
+					{t('session.key.points.subtitle')}
+				</p>
+			</div>
+			
+			<div class="space-y-6">
+				<!-- Session 1: Responsible AI -->
+				<details class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden session-details">
+					<summary class="flex items-center gap-3 p-6 cursor-pointer hover:bg-slate-50 transition-colors">
+						<div class="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center flex-shrink-0">
+							<svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+							</svg>
+						</div>
+						<div class="flex-1">
+							<h3 class="text-2xl font-bold text-slate-900">Session 1 — Responsible AI</h3>
+							<div class="flex flex-wrap gap-2 mt-2">
+								<span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm font-medium">RGAF (9 Dimensions)</span>
+								<span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm font-medium">TrustyAI Tooling</span>
+								<span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm font-medium">Identity & Provenance</span>
+								<span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm font-medium">FINOS Governance</span>
+							</div>
+						</div>
+						<svg class="w-5 h-5 text-slate-500 transform transition-transform details-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+						</svg>
+					</summary>
+					<div class="px-6 pb-6 border-t border-slate-100">
+						<div class="pt-4">
+							<ul class="text-slate-700 space-y-3">
+								<li class="flex items-start gap-2">
+									<span class="w-2 h-2 bg-blue-500 rounded-full mt-2 flex-shrink-0"></span>
+									<span>Engineer for fairness, safety, explainability, and alignment; not just principles.</span>
+								</li>
+								<li class="flex items-start gap-2">
+									<span class="w-2 h-2 bg-blue-500 rounded-full mt-2 flex-shrink-0"></span>
+									<span>Adopt machine-readable controls, risk/mitigation catalogs, and open auditability.</span>
+								</li>
+								<li class="flex items-start gap-2">
+									<span class="w-2 h-2 bg-blue-500 rounded-full mt-2 flex-shrink-0"></span>
+									<span>Use federated identity and traceability for sensitive domains (e.g., child safety).</span>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</details>
+
+
+				<!-- Session 2: Model Collaboration -->
+				<details class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden session-details">
+					<summary class="flex items-center gap-3 p-6 cursor-pointer hover:bg-slate-50 transition-colors">
+						<div class="w-12 h-12 bg-emerald-600 rounded-lg flex items-center justify-center flex-shrink-0">
+							<svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+							</svg>
+						</div>
+						<div class="flex-1">
+							<h3 class="text-2xl font-bold text-slate-900">Session 2 — Model Collaboration</h3>
+							<div class="flex flex-wrap gap-2 mt-2">
+								<span class="px-3 py-1 bg-emerald-100 text-emerald-800 rounded-full text-sm font-medium">True Openness</span>
+								<span class="px-3 py-1 bg-emerald-100 text-emerald-800 rounded-full text-sm font-medium">MOF (Class I–III)</span>
+								<span class="px-3 py-1 bg-emerald-100 text-emerald-800 rounded-full text-sm font-medium">Open Data & Compute</span>
+								<span class="px-3 py-1 bg-emerald-100 text-emerald-800 rounded-full text-sm font-medium">Language Preservation</span>
+							</div>
+						</div>
+						<svg class="w-5 h-5 text-slate-500 transform transition-transform details-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+						</svg>
+					</summary>
+					<div class="px-6 pb-6 border-t border-slate-100">
+						<div class="pt-4">
+							<ul class="text-slate-700 space-y-3">
+								<li class="flex items-start gap-2">
+									<span class="w-2 h-2 bg-emerald-500 rounded-full mt-2 flex-shrink-0"></span>
+									<span>Counter "open-washing" with permissive licensing and verifiable openness.</span>
+								</li>
+								<li class="flex items-start gap-2">
+									<span class="w-2 h-2 bg-emerald-500 rounded-full mt-2 flex-shrink-0"></span>
+									<span>Expand access to diverse datasets and affordable compute, including emerging economies.</span>
+								</li>
+								<li class="flex items-start gap-2">
+									<span class="w-2 h-2 bg-emerald-500 rounded-full mt-2 flex-shrink-0"></span>
+									<span>Partner with global bodies to preserve languages and cultures in AI.</span>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</details>
+
+
+				<!-- Session 3: Maturity & Evaluation -->
+				<details class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden session-details">
+					<summary class="flex items-center gap-3 p-6 cursor-pointer hover:bg-slate-50 transition-colors">
+						<div class="w-12 h-12 bg-orange-600 rounded-lg flex items-center justify-center flex-shrink-0">
+							<svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+							</svg>
+						</div>
+						<div class="flex-1">
+							<h3 class="text-2xl font-bold text-slate-900">Session 3 — Maturity & Evaluation</h3>
+							<div class="flex flex-wrap gap-2 mt-2">
+								<span class="px-3 py-1 bg-orange-100 text-orange-800 rounded-full text-sm font-medium">Human-Centered Value</span>
+								<span class="px-3 py-1 bg-orange-100 text-orange-800 rounded-full text-sm font-medium">Standardized Testing</span>
+								<span class="px-3 py-1 bg-orange-100 text-orange-800 rounded-full text-sm font-medium">Context-Aware Metrics</span>
+							</div>
+						</div>
+						<svg class="w-5 h-5 text-slate-500 transform transition-transform details-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+						</svg>
+					</summary>
+					<div class="px-6 pb-6 border-t border-slate-100">
+						<div class="pt-4">
+							<ul class="text-slate-700 space-y-3">
+								<li class="flex items-start gap-2">
+									<span class="w-2 h-2 bg-orange-500 rounded-full mt-2 flex-shrink-0"></span>
+									<span>Move beyond hype; target augmenting human capabilities.</span>
+								</li>
+								<li class="flex items-start gap-2">
+									<span class="w-2 h-2 bg-orange-500 rounded-full mt-2 flex-shrink-0"></span>
+									<span>Establish shared benchmarks and evaluation practices across domains.</span>
+								</li>
+								<li class="flex items-start gap-2">
+									<span class="w-2 h-2 bg-orange-500 rounded-full mt-2 flex-shrink-0"></span>
+									<span>Open-source tools + multi-stakeholder review to improve reliability and transparency.</span>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</details>
+
+
+				<!-- Session 4: Social & Economic Impact -->
+				<details class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden session-details">
+					<summary class="flex items-center gap-3 p-6 cursor-pointer hover:bg-slate-50 transition-colors">
+						<div class="w-12 h-12 bg-purple-600 rounded-lg flex items-center justify-center flex-shrink-0">
+							<svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+							</svg>
+						</div>
+						<div class="flex-1">
+							<h3 class="text-2xl font-bold text-slate-900">Session 4 — Social & Economic Impact</h3>
+							<div class="flex flex-wrap gap-2 mt-2">
+								<span class="px-3 py-1 bg-purple-100 text-purple-800 rounded-full text-sm font-medium">Equity & Access</span>
+								<span class="px-3 py-1 bg-purple-100 text-purple-800 rounded-full text-sm font-medium">Global South Capacity</span>
+								<span class="px-3 py-1 bg-purple-100 text-purple-800 rounded-full text-sm font-medium">Open Systems</span>
+								<span class="px-3 py-1 bg-purple-100 text-purple-800 rounded-full text-sm font-medium">Climate Finance</span>
+							</div>
+						</div>
+						<svg class="w-5 h-5 text-slate-500 transform transition-transform details-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+						</svg>
+					</summary>
+					<div class="px-6 pb-6 border-t border-slate-100">
+						<div class="pt-4">
+							<ul class="text-slate-700 space-y-3">
+								<li class="flex items-start gap-2">
+									<span class="w-2 h-2 bg-purple-500 rounded-full mt-2 flex-shrink-0"></span>
+									<span>Invest in capacity-building, infrastructure, and context-aware models for underserved regions.</span>
+								</li>
+								<li class="flex items-start gap-2">
+									<span class="w-2 h-2 bg-purple-500 rounded-full mt-2 flex-shrink-0"></span>
+									<span>Use open data and tooling to reduce information monopolies.</span>
+								</li>
+								<li class="flex items-start gap-2">
+									<span class="w-2 h-2 bg-purple-500 rounded-full mt-2 flex-shrink-0"></span>
+									<span>Apply transparent models in finance/climate to avoid black-box risks.</span>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</details>
+
+
+				<!-- Session 5: Agentic AI -->
+				<details class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden session-details">
+					<summary class="flex items-center gap-3 p-6 cursor-pointer hover:bg-slate-50 transition-colors">
+						<div class="w-12 h-12 bg-red-600 rounded-lg flex items-center justify-center flex-shrink-0">
+							<svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+							</svg>
+						</div>
+						<div class="flex-1">
+							<h3 class="text-2xl font-bold text-slate-900">Session 5 — Agentic AI</h3>
+							<div class="flex flex-wrap gap-2 mt-2">
+								<span class="px-3 py-1 bg-red-100 text-red-800 rounded-full text-sm font-medium">Identity</span>
+								<span class="px-3 py-1 bg-red-100 text-red-800 rounded-full text-sm font-medium">Provenance (C2PA)</span>
+								<span class="px-3 py-1 bg-red-100 text-red-800 rounded-full text-sm font-medium">Delegation & Oversight</span>
+								<span class="px-3 py-1 bg-red-100 text-red-800 rounded-full text-sm font-medium">Security ≠ Trust</span>
+							</div>
+						</div>
+						<svg class="w-5 h-5 text-slate-500 transform transition-transform details-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+						</svg>
+					</summary>
+					<div class="px-6 pb-6 border-t border-slate-100">
+						<div class="pt-4">
+							<ul class="text-slate-700 space-y-3">
+								<li class="flex items-start gap-2">
+									<span class="w-2 h-2 bg-red-500 rounded-full mt-2 flex-shrink-0"></span>
+									<span>Deploy content credentials and provenance to combat mis/disinformation.</span>
+								</li>
+								<li class="flex items-start gap-2">
+									<span class="w-2 h-2 bg-red-500 rounded-full mt-2 flex-shrink-0"></span>
+									<span>Design accountability for agents: memory, identity, audit trails, and safe tool access.</span>
+								</li>
+								<li class="flex items-start gap-2">
+									<span class="w-2 h-2 bg-red-500 rounded-full mt-2 flex-shrink-0"></span>
+									<span>Adopt monitoring/critic agents and pre-action policy checks.</span>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</details>
+			</div>
+		</div>
+	</section>
+
+	<!-- Suggested Actions -->
+	<section class="py-20 bg-slate-50">
+		<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 scroll-animate">
+			<div class="text-center mb-16">
+				<h2 class="text-3xl sm:text-4xl font-bold text-slate-900 mb-4">{t('conclusions.title')}</h2>
+				<p class="text-lg text-slate-600 max-w-3xl mx-auto">
+					{t('conclusions.subtitle')}
+				</p>
+			</div>
+			
+			<div class="space-y-4">
+				<details class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden action-details" open>
+					<summary class="flex items-center gap-3 p-4 cursor-pointer hover:bg-slate-50 transition-colors">
+						<div class="w-8 h-8 bg-blue-600 text-white rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0">1</div>
+						<h4 class="font-semibold text-slate-900 flex-1">Transparency & Licensing</h4>
+						<svg class="w-4 h-4 text-slate-500 transform transition-transform details-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+						</svg>
+					</summary>
+					<div class="px-4 pb-4 pt-0 border-t border-slate-100 mt-4">
+						<p class="text-slate-700 mt-2">Publish transparent model/dataset cards; adopt permissive open licenses (e.g., Apache-2.0/MIT).</p>
+					</div>
+				</details>
+
+				<details class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden action-details">
+					<summary class="flex items-center gap-3 p-4 cursor-pointer hover:bg-slate-50 transition-colors">
+						<div class="w-8 h-8 bg-emerald-600 text-white rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0">2</div>
+						<h4 class="font-semibold text-slate-900 flex-1">Independent AI Audits</h4>
+						<svg class="w-4 h-4 text-slate-500 transform transition-transform details-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+						</svg>
+					</summary>
+					<div class="px-4 pb-4 pt-0 border-t border-slate-100 mt-4">
+						<p class="text-slate-700 mt-2">Pilot independent, open audits for high-risk AI with machine-readable controls (e.g., FINOS-style).</p>
+					</div>
+				</details>
+
+				<details class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden action-details">
+					<summary class="flex items-center gap-3 p-4 cursor-pointer hover:bg-slate-50 transition-colors">
+						<div class="w-8 h-8 bg-orange-600 text-white rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0">3</div>
+						<h4 class="font-semibold text-slate-900 flex-1">Global Registry & Compute</h4>
+						<svg class="w-4 h-4 text-slate-500 transform transition-transform details-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+						</svg>
+					</summary>
+					<div class="px-4 pb-4 pt-0 border-t border-slate-100 mt-4">
+						<p class="text-slate-700 mt-2">Stand up a global registry of open models/datasets and a shared compute pilot for education/research.</p>
+					</div>
+				</details>
+
+				<details class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden action-details">
+					<summary class="flex items-center gap-3 p-4 cursor-pointer hover:bg-slate-50 transition-colors">
+						<div class="w-8 h-8 bg-purple-600 text-white rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0">4</div>
+						<h4 class="font-semibold text-slate-900 flex-1">Cross-Regional Working Groups</h4>
+						<svg class="w-4 h-4 text-slate-500 transform transition-transform details-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+						</svg>
+					</summary>
+					<div class="px-4 pb-4 pt-0 border-t border-slate-100 mt-4">
+						<p class="text-slate-700 mt-2">Launch cross-regional working groups on evaluation standards and language/culture preservation.</p>
+					</div>
+				</details>
+
+				<details class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden action-details">
+					<summary class="flex items-center gap-3 p-4 cursor-pointer hover:bg-slate-50 transition-colors">
+						<div class="w-8 h-8 bg-red-600 text-white rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0">5</div>
+						<h4 class="font-semibold text-slate-900 flex-1">Content Credentials & Oversight</h4>
+						<svg class="w-4 h-4 text-slate-500 transform transition-transform details-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+						</svg>
+					</summary>
+					<div class="px-4 pb-4 pt-0 border-t border-slate-100 mt-4">
+						<p class="text-slate-700 mt-2">Deploy content credentials (C2PA) and agent oversight patterns in production pilots.</p>
+					</div>
+				</details>
+
+				<details class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden action-details">
+					<summary class="flex items-center gap-3 p-4 cursor-pointer hover:bg-slate-50 transition-colors">
+						<div class="w-8 h-8 bg-slate-600 text-white rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0">6</div>
+						<h4 class="font-semibold text-slate-900 flex-1">Incident Response Playbooks</h4>
+						<svg class="w-4 h-4 text-slate-500 transform transition-transform details-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+						</svg>
+					</summary>
+					<div class="px-4 pb-4 pt-0 border-t border-slate-100 mt-4">
+						<p class="text-slate-700 mt-2">Create incident response playbooks for AI harms and run tabletop exercises with regulators.</p>
+					</div>
+				</details>
+			</div>
+		</div>
+	</section>
+
+	<!-- Key Organizations -->
+	<section class="py-16 bg-white border-t border-slate-200">
+		<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 scroll-animate">
+			<div class="text-center mb-12">
+				<h2 class="text-2xl sm:text-3xl font-bold text-slate-900 mb-4">{t('organizations.title')}</h2>
+				<p class="text-lg text-slate-600 max-w-3xl mx-auto">
+					{t('organizations.subtitle')}
+				</p>
+			</div>
+			
+			<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+				<!-- GOSIM -->
+				<a href="https://gosim.org/" target="_blank" rel="noopener noreferrer" class="group bg-white hover:bg-slate-50 rounded-xl p-6 text-center transition-all duration-300 border border-slate-200 hover:border-blue-300 hover:shadow-md">
+					<div class="h-12 flex items-center justify-center">
+						<img src="/assets/logos/gosim.svg" alt="GOSIM Logo" class="h-10 w-auto object-contain">
+					</div>
+				</a>
+				
+				<!-- Linux Foundation -->
+				<a href="https://linuxfoundation.org/" target="_blank" rel="noopener noreferrer" class="group bg-white hover:bg-slate-50 rounded-xl p-6 text-center transition-all duration-300 border border-slate-200 hover:border-blue-300 hover:shadow-md">
+					<div class="h-12 flex items-center justify-center">
+						<img src="/assets/logos/linux-foundation.svg" alt="Linux Foundation Logo" class="h-10 w-auto object-contain">
+					</div>
+				</a>
+				
+				<!-- FINOS -->
+				<a href="https://finos.org/" target="_blank" rel="noopener noreferrer" class="group bg-white hover:bg-slate-50 rounded-xl p-6 text-center transition-all duration-300 border border-slate-200 hover:border-blue-300 hover:shadow-md">
+					<div class="h-12 flex items-center justify-center">
+						<img src="/assets/logos/finos.png" alt="FINOS Logo" class="h-10 w-auto object-contain">
+					</div>
+				</a>
+				
+				<!-- IEEE -->
+				<a href="https://ieee.org/" target="_blank" rel="noopener noreferrer" class="group bg-white hover:bg-slate-50 rounded-xl p-6 text-center transition-all duration-300 border border-slate-200 hover:border-blue-300 hover:shadow-md">
+					<div class="h-12 flex items-center justify-center">
+						<img src="/assets/logos/ieee-correct.svg" alt="IEEE Logo" class="h-10 w-auto object-contain">
+					</div>
+				</a>
+				
+				<!-- ITU -->
+				<a href="https://itu.int/" target="_blank" rel="noopener noreferrer" class="group bg-white hover:bg-slate-50 rounded-xl p-6 text-center transition-all duration-300 border border-slate-200 hover:border-blue-300 hover:shadow-md">
+					<div class="h-12 flex items-center justify-center">
+						<img src="/assets/logos/itu.svg" alt="ITU Logo" class="h-10 w-auto object-contain">
+					</div>
+				</a>
+				
+				<!-- World Economic Forum -->
+				<a href="https://weforum.org/" target="_blank" rel="noopener noreferrer" class="group bg-white hover:bg-slate-50 rounded-xl p-6 text-center transition-all duration-300 border border-slate-200 hover:border-blue-300 hover:shadow-md">
+					<div class="h-12 flex items-center justify-center">
+						<img src="/assets/logos/wef-wiki.svg" alt="World Economic Forum Logo" class="h-10 w-auto object-contain">
+					</div>
+				</a>
+			</div>
+		</div>
+	</section>
+
+	<!-- Call to Action -->
+	<section id="collaboration" class="py-20 bg-slate-900 text-white">
+		<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center scroll-animate">
+			<h2 class="text-3xl sm:text-4xl font-bold mb-6">{t('cta.title')}</h2>
+			<p class="text-xl text-slate-300 mb-8">
+				{t('cta.subtitle')}
+			</p>
+			<div class="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+				<a href="https://globaldigitalcollaboration.groups.io/g/GDC-AIForHumanity" target="_blank" rel="noopener noreferrer" class="bg-emerald-600 hover:bg-emerald-700 text-white px-8 py-3 rounded-lg font-semibold transition-colors">
+					{t('cta.join.main')}
+				</a>
+				<a href="#collaboration" class="border-2 border-white text-white hover:bg-white hover:text-slate-900 px-8 py-3 rounded-lg font-semibold transition-colors">
+					{t('cta.explore.working.groups')}
+				</a>
+			</div>
+			
+			<!-- Topic-specific collaboration links -->
+			<div class="grid grid-cols-2 md:grid-cols-5 gap-3 text-sm">
+				<div class="bg-slate-800 rounded-lg p-3 border border-slate-700">
+					<div class="text-blue-400 font-semibold mb-1">Responsible AI</div>
+					<a href="https://globaldigitalcollaboration.groups.io/g/GDC-AIForHumanity-ResponsibleAI" target="_blank" rel="noopener noreferrer" class="text-slate-300 hover:text-white transition-colors">Join Group →</a>
+				</div>
+				<div class="bg-slate-800 rounded-lg p-3 border border-slate-700">
+					<div class="text-emerald-400 font-semibold mb-1">Model Collaboration</div>
+					<a href="https://globaldigitalcollaboration.groups.io/g/GDC-AIForHumanity-OpenModelCollab" target="_blank" rel="noopener noreferrer" class="text-slate-300 hover:text-white transition-colors">Join Group →</a>
+				</div>
+				<div class="bg-slate-800 rounded-lg p-3 border border-slate-700">
+					<div class="text-orange-400 font-semibold mb-1">Maturity & Evaluation</div>
+					<a href="https://globaldigitalcollaboration.groups.io/g/GDC-AIForHumanity-MaturityandEval" target="_blank" rel="noopener noreferrer" class="text-slate-300 hover:text-white transition-colors">Join Group →</a>
+				</div>
+				<div class="bg-slate-800 rounded-lg p-3 border border-slate-700">
+					<div class="text-purple-400 font-semibold mb-1">Social & Economic Impact</div>
+					<a href="https://globaldigitalcollaboration.groups.io/g/GDC-AIForHumanity-SocialEconImpact" target="_blank" rel="noopener noreferrer" class="text-slate-300 hover:text-white transition-colors">Join Group →</a>
+				</div>
+				<div class="bg-slate-800 rounded-lg p-3 border border-slate-700">
+					<div class="text-red-400 font-semibold mb-1">Agentic AI</div>
+					<a href="https://globaldigitalcollaboration.groups.io/g/GDC-AIForHumanity-AIAgent" target="_blank" rel="noopener noreferrer" class="text-slate-300 hover:text-white transition-colors">Join Group →</a>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Resources Section -->
+	<section id="resources" class="py-16 bg-slate-50">
+		<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 scroll-animate">
+			<div class="text-center mb-12">
+				<h2 class="text-2xl sm:text-3xl font-bold text-slate-900 mb-4">{t('resources.title')}</h2>
+				<p class="text-lg text-slate-600 max-w-3xl mx-auto">
+					{t('resources.subtitle')}
+				</p>
+			</div>
+			
+			<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+				<!-- Main Report -->
+				<div class="bg-white rounded-xl p-6 border border-slate-200 hover:border-blue-300 hover:shadow-md transition-all duration-300">
+					<div class="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center mb-4">
+						<svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+						</svg>
+					</div>
+					<h3 class="text-lg font-bold text-slate-900 mb-2">GDC AI For Humanity Track Report</h3>
+					<p class="text-slate-600 text-sm mb-4">
+						Comprehensive report covering the five key AI themes from the 2025 Global Digital Collaboration Conference
+					</p>
+					<a href="/pdf/GDC AI For Humanity Track Report - v2.0.pdf" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-blue-600 hover:text-blue-800 font-semibold transition-colors">
+						<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+						</svg>
+						Download PDF
+					</a>
+				</div>
+
+				<!-- Framework Resources -->
+				<div class="bg-white rounded-xl p-6 border border-slate-200 hover:border-emerald-300 hover:shadow-md transition-all duration-300">
+					<div class="w-12 h-12 bg-emerald-600 rounded-lg flex items-center justify-center mb-4">
+						<svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
+						</svg>
+					</div>
+					<h3 class="text-lg font-bold text-slate-900 mb-2">Implementation Frameworks</h3>
+					<p class="text-slate-600 text-sm mb-4">
+						Access key frameworks including RGAF, MOF, and TSP for implementing responsible AI practices
+					</p>
+					<div class="text-slate-500 text-sm">
+						Coming Soon
+					</div>
+				</div>
+
+				<!-- Community Guidelines -->
+				<div class="bg-white rounded-xl p-6 border border-slate-200 hover:border-purple-300 hover:shadow-md transition-all duration-300">
+					<div class="w-12 h-12 bg-purple-600 rounded-lg flex items-center justify-center mb-4">
+						<svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+						</svg>
+					</div>
+					<h3 class="text-lg font-bold text-slate-900 mb-2">Community Guidelines</h3>
+					<p class="text-slate-600 text-sm mb-4">
+						Guidelines for participation in working groups and collaborative development
+					</p>
+					<div class="text-slate-500 text-sm">
+						Coming Soon
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Newsletter Signup -->
+	<section id="newsletter" class="py-16 bg-gradient-to-br from-blue-600 to-emerald-600 text-white">
+		<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center scroll-animate">
+			<div class="mb-8">
+				<h2 class="text-3xl sm:text-4xl font-bold mb-4">{t('newsletter.title')}</h2>
+				<p class="text-xl text-blue-100 mb-6">
+					{t('newsletter.subtitle')}
+				</p>
+			</div>
+			
+			<div class="max-w-md mx-auto">
+				<form class="flex flex-col sm:flex-row gap-3" action="https://globaldigitalcollaboration.groups.io/g/GDC-AIForHumanity/join" method="get" target="_blank">
+					<input 
+						type="email" 
+						name="email" 
+						placeholder="Enter your email address" 
+						required
+						class="flex-1 px-4 py-3 rounded-lg border border-blue-300 bg-white text-slate-900 placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+					>
+					<button 
+						type="submit"
+						class="bg-emerald-600 hover:bg-emerald-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors whitespace-nowrap"
+					>
+						{t('newsletter.join')}
+					</button>
+				</form>
+				<p class="text-sm text-blue-200 mt-3">
+					{t('newsletter.disclaimer')}
+				</p>
+			</div>
+		</div>
+	</section>
+</Layout>
+
+<script>
+	// Handle smooth scrolling for navigation links
+	document.addEventListener('DOMContentLoaded', function() {
+		// Handle anchor links
+		const anchorLinks = document.querySelectorAll('a[href^="#"]:not([href="#"])');
+		anchorLinks.forEach(link => {
+			link.addEventListener('click', function(e) {
+				const href = this.getAttribute('href');
+				const targetId = href.substring(1);
+				const targetElement = document.getElementById(targetId);
+				
+				if (targetElement && targetId) {
+					e.preventDefault();
+					// Update URL hash
+					history.pushState(null, null, href);
+					// Scroll to element with offset
+					const offset = 80; // Add some padding from top
+					const elementPosition = targetElement.offsetTop - offset;
+					window.scrollTo({
+						top: elementPosition,
+						behavior: 'smooth'
+					});
+				}
+			});
+		});
+		
+		// Handle expandable sections
+		// Handle arrow rotation for details elements
+		const detailsElements = document.querySelectorAll('details');
+		
+		detailsElements.forEach((details, index) => {
+			const arrow = details.querySelector('.details-arrow');
+			const storageKey = 'session-details-' + index;
+			
+			// Restore saved state from localStorage
+			const savedState = localStorage.getItem(storageKey);
+			if (savedState === '1') {
+				details.open = true;
+				if (arrow) arrow.style.transform = 'rotate(180deg)';
+			}
+			
+			// Add click event listener
+			details.addEventListener('toggle', function() {
+				if (arrow) {
+					if (details.open) {
+						arrow.style.transform = 'rotate(180deg)';
+						localStorage.setItem(storageKey, '1');
+					} else {
+						arrow.style.transform = 'rotate(0deg)';
+						localStorage.setItem(storageKey, '0');
+					}
+				}
+			});
+			
+			// Set initial arrow state
+			if (arrow && details.open) {
+				arrow.style.transform = 'rotate(180deg)';
+			}
+		});
+	});
+</script>
+
+<style>
+	html {
+		scroll-behavior: smooth;
+	}
+	
+	.details-arrow {
+		transition: transform 0.2s ease;
+	}
+	
+	details[open] .details-arrow {
+		transform: rotate(180deg);
+	}
+	
+	.session-details summary::-webkit-details-marker,
+	.action-details summary::-webkit-details-marker {
+		display: none;
+	}
+</style>

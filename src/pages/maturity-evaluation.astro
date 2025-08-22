@@ -1,0 +1,334 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="AI Maturity & Evaluation - AI for Humanity" description="Assessment frameworks, benchmarking standards, and maturity models for systematically evaluating AI system performance, fairness, safety, and societal value.">
+	<!-- Hero Section -->
+	<section class="relative bg-gradient-to-br from-orange-900 via-orange-700 to-orange-600 text-white overflow-hidden">
+		<div class="absolute inset-0 bg-black opacity-10"></div>
+		<div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
+			<div class="text-center">
+				<div class="w-16 h-16 bg-orange-100 rounded-xl flex items-center justify-center mx-auto mb-6">
+					<svg class="w-8 h-8 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+					</svg>
+				</div>
+				<h1 class="text-4xl sm:text-5xl font-bold mb-6">AI Maturity & Evaluation</h1>
+				<p class="text-xl text-orange-100 max-w-3xl mx-auto">
+					Systematically assessing AI system advancement, capability, performance, fairness, safety, 
+					and societal value through standardized frameworks and collaborative evaluation.
+				</p>
+			</div>
+		</div>
+	</section>
+
+	<!-- Current State -->
+	<section class="py-16 bg-white">
+		<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+			<h2 class="text-3xl font-bold text-slate-900 mb-8 text-center">The Reality Check</h2>
+			
+			<div class="bg-amber-50 border-l-4 border-amber-400 p-6 mb-8">
+				<h3 class="text-lg font-semibold text-amber-800 mb-2">The Investment vs. Impact Gap</h3>
+				<p class="text-amber-700 mb-4">
+					Despite massive investment in generative AI, its real-world impact to date remains modest, with 
+					limited economically transformative applications and persistent issues like weak reasoning, 
+					data bias, and lack of explainability.
+				</p>
+				<div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-4">
+					<div class="text-center">
+						<div class="text-2xl font-bold text-amber-600">5%</div>
+						<div class="text-sm text-amber-700">of tasks will be profitably automated in next decade</div>
+					</div>
+					<div class="text-center">
+						<div class="text-2xl font-bold text-amber-600">1%</div>
+						<div class="text-sm text-amber-700">expected addition to global GDP from AI</div>
+					</div>
+					<div class="text-center">
+						<div class="text-2xl font-bold text-amber-600">47</div>
+						<div class="text-sm text-amber-700">Active AI standards projects in IEEE alone</div>
+					</div>
+				</div>
+			</div>
+			
+			<div class="bg-emerald-50 border-l-4 border-emerald-400 p-6">
+				<h3 class="text-lg font-semibold text-emerald-800 mb-2">The Goal: Human Augmentation, Not Replacement</h3>
+				<p class="text-emerald-700">
+					Experts stress that the goal of AI should not be blind automation, but rather using AI to augment 
+					human capabilities in areas like healthcare, education, and climate resilience. True success means 
+					aligning AI capabilities with human well-being.
+				</p>
+			</div>
+		</div>
+	</section>
+
+	<!-- OpenAI Levels Framework -->
+	<section class="py-16 bg-slate-50">
+		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+			<h2 class="text-3xl font-bold text-slate-900 mb-12 text-center">OpenAI's 5-Level AI Maturity Framework</h2>
+			
+			<div class="grid grid-cols-1 md:grid-cols-5 gap-4">
+				<!-- Level 1 -->
+				<div class="bg-slate-200 rounded-lg p-6 text-center">
+					<div class="w-10 h-10 bg-slate-600 rounded-full flex items-center justify-center text-white font-bold mx-auto mb-4">1</div>
+					<h3 class="font-bold text-slate-900 mb-2">Chatbots</h3>
+					<p class="text-sm text-slate-600">AI with conversational language</p>
+				</div>
+
+				<!-- Level 2 -->
+				<div class="bg-blue-100 rounded-lg p-6 text-center">
+					<div class="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold mx-auto mb-4">2</div>
+					<h3 class="font-bold text-slate-900 mb-2">Reasoners</h3>
+					<p class="text-sm text-slate-600">Human-level problem solving</p>
+				</div>
+
+				<!-- Level 3 -->
+				<div class="bg-emerald-100 rounded-lg p-6 text-center">
+					<div class="w-10 h-10 bg-emerald-600 rounded-full flex items-center justify-center text-white font-bold mx-auto mb-4">3</div>
+					<h3 class="font-bold text-slate-900 mb-2">Agents</h3>
+					<p class="text-sm text-slate-600">Systems that can take actions</p>
+				</div>
+
+				<!-- Level 4 -->
+				<div class="bg-orange-100 rounded-lg p-6 text-center">
+					<div class="w-10 h-10 bg-orange-600 rounded-full flex items-center justify-center text-white font-bold mx-auto mb-4">4</div>
+					<h3 class="font-bold text-slate-900 mb-2">Innovators</h3>
+					<p class="text-sm text-slate-600">AI that can aid in invention</p>
+				</div>
+
+				<!-- Level 5 -->
+				<div class="bg-purple-100 rounded-lg p-6 text-center">
+					<div class="w-10 h-10 bg-purple-600 rounded-full flex items-center justify-center text-white font-bold mx-auto mb-4">5</div>
+					<h3 class="font-bold text-slate-900 mb-2">Organizations</h3>
+					<p class="text-sm text-slate-600">AI that can do work of an organization</p>
+				</div>
+			</div>
+
+			<div class="mt-8 text-center">
+				<p class="text-slate-600">
+					Currently, most AI systems operate at Level 1-2, with significant challenges in reasoning, 
+					decision-making, and autonomous action.
+				</p>
+			</div>
+		</div>
+	</section>
+
+	<!-- Key Challenges -->
+	<section class="py-16 bg-white">
+		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+			<h2 class="text-3xl font-bold text-slate-900 mb-12 text-center">Current AI Challenges</h2>
+			
+			<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+				<!-- Business Viability -->
+				<div class="bg-red-50 rounded-xl p-6">
+					<div class="w-12 h-12 bg-red-600 rounded-lg flex items-center justify-center mb-4">
+						<svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"></path>
+						</svg>
+					</div>
+					<h3 class="text-xl font-bold text-slate-900 mb-3">Business Viability</h3>
+					<p class="text-slate-700">
+						Massive investment in GenAI far exceeds current revenue, with no breakout applications 
+						yet to justify the scale of investment.
+					</p>
+				</div>
+
+				<!-- Technical Limitations -->
+				<div class="bg-orange-50 rounded-xl p-6">
+					<div class="w-12 h-12 bg-orange-600 rounded-lg flex items-center justify-center mb-4">
+						<svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L3.732 16.5c-.77.833.192 2.5 1.732 2.5z"></path>
+						</svg>
+					</div>
+					<h3 class="text-xl font-bold text-slate-900 mb-3">Technical Limitations</h3>
+					<p class="text-slate-700">
+						LLMs face serious issues with data privacy, weak reasoning abilities, and lack of 
+						transparency in decision-making processes.
+					</p>
+				</div>
+
+				<!-- Lack of Standards -->
+				<div class="bg-yellow-50 rounded-xl p-6">
+					<div class="w-12 h-12 bg-yellow-600 rounded-lg flex items-center justify-center mb-4">
+						<svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+						</svg>
+					</div>
+					<h3 class="text-xl font-bold text-slate-900 mb-3">Lack of Standards</h3>
+					<p class="text-slate-700">
+						AI development is fragmented with minimal top-down coordination, slowing progress 
+						and industrial cohesion.
+					</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- IEEE AI Levels Working Group -->
+	<section class="py-16 bg-slate-50">
+		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+			<h2 class="text-3xl font-bold text-slate-900 mb-12 text-center">IEEE AI Levels Working Group (P3514)</h2>
+			
+			<div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+				<div>
+					<h3 class="text-xl font-bold text-slate-900 mb-4">Mission</h3>
+					<p class="text-slate-700 mb-6">
+						Foster a collaboration ecosystem for evaluating AI benefits for human well-being through 
+						standardized capability levels, evaluation criteria, and benchmarks.
+					</p>
+					
+					<h4 class="text-lg font-semibold text-slate-900 mb-3">Key Components:</h4>
+					<div class="space-y-2">
+						<div class="flex items-center text-slate-700">
+							<span class="w-2 h-2 bg-orange-500 rounded-full mr-3"></span>
+							Valuation Framework for AI's contribution to human well-being
+						</div>
+						<div class="flex items-center text-slate-700">
+							<span class="w-2 h-2 bg-orange-500 rounded-full mr-3"></span>
+							AI Lifecycle Capabilities assessment
+						</div>
+						<div class="flex items-center text-slate-700">
+							<span class="w-2 h-2 bg-orange-500 rounded-full mr-3"></span>
+							Real-World Scenarios for high-impact use cases
+						</div>
+						<div class="flex items-center text-slate-700">
+							<span class="w-2 h-2 bg-orange-500 rounded-full mr-3"></span>
+							Maturity Index for evaluating AI technologies
+						</div>
+					</div>
+				</div>
+				
+				<div class="bg-white rounded-xl p-8">
+					<h3 class="text-xl font-bold text-slate-900 mb-4">The Challenge</h3>
+					<p class="text-slate-700 mb-4">
+						Standardized evaluation frameworks are essential but currently fragmented, making 
+						comparisons difficult and slowing progress. The effectiveness of benchmarks largely 
+						depends on their standardized approach and application.
+					</p>
+					
+					<div class="bg-orange-50 border border-orange-200 rounded-lg p-4">
+						<h4 class="font-semibold text-orange-800 mb-2">Current Issues</h4>
+						<ul class="text-orange-700 text-sm space-y-1">
+							<li>• Different proprietary AI benchmarks</li>
+							<li>• Inconsistent testing methodologies</li>
+							<li>• Lack of standardization in evaluation</li>
+							<li>• Fragmented compliance requirements</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Testing & Collaboration Framework -->
+	<section class="py-16 bg-white">
+		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+			<h2 class="text-3xl font-bold text-slate-900 mb-12 text-center">International AI Testing Collaboration</h2>
+			
+			<div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+				<!-- Fundamental Challenges -->
+				<div>
+					<h3 class="text-xl font-bold text-slate-900 mb-4">Fundamental Testing Challenges</h3>
+					<div class="space-y-4">
+						<div class="bg-slate-50 rounded-lg p-4">
+							<h4 class="font-semibold text-slate-900 mb-2">Complexity</h4>
+							<p class="text-sm text-slate-600">
+								AI testing is challenging because AI systems, unlike traditional software, 
+								do not rely solely on a fixed environment.
+							</p>
+						</div>
+						<div class="bg-slate-50 rounded-lg p-4">
+							<h4 class="font-semibold text-slate-900 mb-2">Decision Explainability</h4>
+							<p class="text-sm text-slate-600">
+								A key challenge is to explain the decisions made by AI systems, ensuring 
+								transparency without overcomplicating.
+							</p>
+						</div>
+					</div>
+				</div>
+
+				<!-- Testing Objectives -->
+				<div>
+					<h3 class="text-xl font-bold text-slate-900 mb-4">Core Testing Purposes</h3>
+					<div class="space-y-3">
+						<div class="flex items-start space-x-3">
+							<div class="w-2 h-2 bg-emerald-500 rounded-full mt-2"></div>
+							<div>
+								<span class="font-medium text-slate-900">Regulatory Compliance:</span>
+								<p class="text-sm text-slate-600">Ensure systems meet legal requirements</p>
+							</div>
+						</div>
+						<div class="flex items-start space-x-3">
+							<div class="w-2 h-2 bg-emerald-500 rounded-full mt-2"></div>
+							<div>
+								<span class="font-medium text-slate-900">Output Consistency:</span>
+								<p class="text-sm text-slate-600">Validate reliable results under similar conditions</p>
+							</div>
+						</div>
+						<div class="flex items-start space-x-3">
+							<div class="w-2 h-2 bg-emerald-500 rounded-full mt-2"></div>
+							<div>
+								<span class="font-medium text-slate-900">Scenario Identification:</span>
+								<p class="text-sm text-slate-600">Define context-specific test scenarios</p>
+							</div>
+						</div>
+						<div class="flex items-start space-x-3">
+							<div class="w-2 h-2 bg-emerald-500 rounded-full mt-2"></div>
+							<div>
+								<span class="font-medium text-slate-900">Metric Selection:</span>
+								<p class="text-sm text-slate-600">Identify appropriate evaluation metrics</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="bg-gradient-to-br from-orange-50 to-yellow-50 rounded-xl p-8">
+				<h3 class="text-xl font-bold text-slate-900 mb-4">Collaborative Requirements</h3>
+				<p class="text-slate-700 mb-6">
+					Effective AI testing demands collaboration across stakeholders, thoughtful policy development, 
+					and investment in training and open-source tools.
+				</p>
+				
+				<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+					<div>
+						<h4 class="font-semibold text-orange-800 mb-2">Global Stakeholders</h4>
+						<p class="text-sm text-orange-700">
+							Balance input from global stakeholders and those directly impacted by AI decisions.
+						</p>
+					</div>
+					<div>
+						<h4 class="font-semibold text-orange-800 mb-2">Context-Aware Standards</h4>
+						<p class="text-sm text-orange-700">
+							Determining acceptable performance depends on application context and use cases.
+						</p>
+					</div>
+					<div>
+						<h4 class="font-semibold text-orange-800 mb-2">Capacity Building</h4>
+						<p class="text-sm text-orange-700">
+							Training people in AI testing to address existing gaps in expertise and tools.
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Call to Action -->
+	<section class="py-16 bg-orange-900 text-white">
+		<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+			<h2 class="text-3xl font-bold mb-6">Shape AI Evaluation Standards</h2>
+			<p class="text-xl text-orange-100 mb-8">
+				Join the global effort to create comprehensive, standardized frameworks for evaluating 
+				AI maturity and ensuring responsible development.
+			</p>
+			<div class="flex flex-col sm:flex-row gap-4 justify-center">
+				<a href="https://globaldigitalcollaboration.groups.io/g/GDC-AIForHumanity-MaturityandEval" target="_blank" rel="noopener noreferrer" class="bg-emerald-600 hover:bg-emerald-700 text-white px-8 py-3 rounded-lg font-semibold transition-colors">
+					Join Maturity Discussion
+				</a>
+				<a href="#" class="border-2 border-white text-white hover:bg-white hover:text-orange-900 px-8 py-3 rounded-lg font-semibold transition-colors">
+					IEEE AI Levels Working Group
+				</a>
+			</div>
+		</div>
+	</section>
+</Layout>

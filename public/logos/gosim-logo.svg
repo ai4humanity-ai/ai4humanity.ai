@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Global Open-Source Innovation Meetup (GOSIM)</title>
+    <meta content="GOSIM: A Global Nexus for Open Source Innovation. Organized by and for the community, this entirely volunteer-based endeavor has one prime objective: to provide a stage where innovative open-source projects can shine, collaborate, and evolve." name="description"/>
+    <meta content="width=device-width, initial-scale=1" name="viewport"/>
+
+    <!-- Favicon -->
+    <link
+            rel="shortcut icon"
+            href="/favicon.png"
+            type="image/x-icon"
+    />
+
+    <!-- Apple touch icon -->
+    <link
+            rel="apple-touch-icon"
+            href="/favicon-256.png"
+    />
+
+    <!-- <script src="https://cdn.weglot.com/weglot.min.js"></script>
+    <script>
+      Weglot.initialize({
+        api_key: 'wg_6e494c2f7183ae5d9d3d330d945df15a5'
+      });
+    </script> -->
+  <script type="module" crossorigin src="/assets/index-iGJHzDA8.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-DUCaqKne.css">
+</head>
+
+<body>
+<div id="app"></div>
+
+</body>
+</html>

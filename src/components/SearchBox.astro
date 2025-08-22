@@ -1,0 +1,161 @@
+---
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<div class="relative max-w-md w-full">
+  <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+    <svg class="h-5 w-5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m21 21-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+    </svg>
+  </div>
+  <input 
+    type="text" 
+    class="search-input block w-full pl-10 pr-3 py-2 border border-slate-300 rounded-lg leading-5 bg-white placeholder-slate-500 focus:outline-none focus:placeholder-slate-400 focus:ring-1 focus:ring-blue-500 focus:border-blue-500 text-sm"
+    placeholder={lang === 'zh' ? '搜索AI主题和内容...' : 'Search AI themes and content...'}
+  />
+  
+  <!-- Search Results Dropdown -->
+  <div class="search-results absolute top-full mt-1 w-full bg-white rounded-lg shadow-lg border border-slate-200 z-50 hidden max-h-96 overflow-y-auto">
+    <div class="search-results-content">
+      <!-- Results will be populated by JavaScript -->
+    </div>
+  </div>
+</div>
+
+<script>
+  // Search functionality - scoped to avoid conflicts
+  document.addEventListener('DOMContentLoaded', function() {
+  const searchData = [
+    {
+      title: 'Responsible AI',
+      titleZh: '负责任的AI',
+      url: '/responsible-ai',
+      urlZh: '/zh/responsible-ai',
+      description: 'Ethics, trust, safety, and transparency in AI development',
+      descriptionZh: 'AI开发中的伦理、信任、安全和透明度',
+      keywords: ['ethics', 'trust', 'safety', 'transparency', 'RGAF', 'governance']
+    },
+    {
+      title: 'Model Collaboration',
+      titleZh: '模型协作',
+      url: '/model-collaboration',
+      urlZh: '/zh/model-collaboration',
+      description: 'Open models, data accessibility, and collaborative development',
+      descriptionZh: '开放模型、数据可及性以及协作开发',
+      keywords: ['open source', 'collaboration', 'MOF', 'cultural preservation']
+    },
+    {
+      title: 'Maturity Evaluation',
+      titleZh: '成熟度评估',
+      url: '/maturity-evaluation',
+      urlZh: '/zh/maturity-evaluation',
+      description: 'Assessment frameworks and benchmarking standards for AI systems',
+      descriptionZh: 'AI系统的评估框架和基准标准',
+      keywords: ['evaluation', 'benchmarking', 'IEEE', 'standards', 'testing']
+    },
+    {
+      title: 'Social Economic',
+      titleZh: '社会经济',
+      url: '/social-economic',
+      urlZh: '/zh/social-economic',
+      description: 'Impact on labor, equity, and access to AI technologies',
+      descriptionZh: '对劳动力、公平性和AI技术获取的影响',
+      keywords: ['labor', 'equity', 'access', 'Global South', 'economic impact']
+    },
+    {
+      title: 'Agentic AI',
+      titleZh: '智能体AI',
+      url: '/agentic-ai',
+      urlZh: '/zh/agentic-ai',
+      description: 'Autonomous AI systems, trust protocols, and security frameworks',
+      descriptionZh: '自主AI系统、信任协议和安全框架',
+      keywords: ['autonomous', 'agents', 'trust', 'security', 'TSP', 'C2PA']
+    }
+  ];
+
+  // Find all search boxes on the page
+  const searchBoxes = document.querySelectorAll('.relative.max-w-md');
+  
+  searchBoxes.forEach(searchBox => {
+    const searchInput = searchBox.querySelector('.search-input');
+    const searchResults = searchBox.querySelector('.search-results');
+    const searchResultsContent = searchBox.querySelector('.search-results-content');
+  
+    // Skip if this search box doesn't have the required elements
+    if (!searchInput || !searchResults || !searchResultsContent) return;
+    
+    // Detect current language from URL
+    const currentLang = window.location.pathname.startsWith('/zh') ? 'zh' : 'en';
+    
+    function performSearch(query) {
+    if (!query.trim()) {
+      searchResults.classList.add('hidden');
+      return;
+    }
+
+    const results = searchData.filter(item => {
+      const title = currentLang === 'zh' ? item.titleZh : item.title;
+      const description = currentLang === 'zh' ? item.descriptionZh : item.description;
+      
+      return title.toLowerCase().includes(query.toLowerCase()) ||
+             description.toLowerCase().includes(query.toLowerCase()) ||
+             item.keywords.some(keyword => keyword.toLowerCase().includes(query.toLowerCase()));
+    });
+
+    if (results.length > 0) {
+      searchResultsContent.innerHTML = results.map(item => {
+        const title = currentLang === 'zh' ? item.titleZh : item.title;
+        const description = currentLang === 'zh' ? item.descriptionZh : item.description;
+        const url = currentLang === 'zh' ? item.urlZh : item.url;
+        
+        return `
+          <a href="${url}" class="block px-4 py-3 hover:bg-slate-50 border-b border-slate-100 last:border-b-0 transition-colors">
+            <div class="font-medium text-slate-900">${title}</div>
+            <div class="text-sm text-slate-600 mt-1">${description}</div>
+          </a>
+        `;
+      }).join('');
+      
+      searchResults.classList.remove('hidden');
+    } else {
+      const noResultsText = currentLang === 'zh' ? '未找到相关结果' : 'No results found';
+      searchResultsContent.innerHTML = `
+        <div class="px-4 py-3 text-slate-500 text-sm">
+          ${noResultsText}
+        </div>
+      `;
+      searchResults.classList.remove('hidden');
+    }
+    }
+
+    // Event listeners for this specific search box
+    searchInput.addEventListener('input', (e) => {
+      performSearch(e.target.value);
+    });
+
+    searchInput.addEventListener('focus', (e) => {
+      if (e.target.value.trim()) {
+        performSearch(e.target.value);
+      }
+    });
+
+    // Hide results when clicking outside this search box
+    document.addEventListener('click', (e) => {
+      if (!searchBox.contains(e.target)) {
+        searchResults.classList.add('hidden');
+      }
+    });
+
+    // Handle keyboard navigation
+    searchInput.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        searchResults.classList.add('hidden');
+        searchInput.blur();
+      }
+    });
+  });
+  });
+</script>
