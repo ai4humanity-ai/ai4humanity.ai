@@ -23,7 +23,8 @@
       "Bash(ssh:*)",
       "Bash(git remote set-url:*)",
       "Bash(git reset:*)",
-      "Bash(rm:*)"
+      "Bash(rm:*)",
+      "Bash(lsof:*)"
     ],
     "deny": [],
     "ask": []

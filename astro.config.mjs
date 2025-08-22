@@ -5,7 +5,7 @@ import tailwindcss from '@tailwindcss/vite';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://csheargm.github.io',
+  site: 'https://ai4humanity-ai.github.io',
   base: process.env.NODE_ENV === 'production' ? '/ai4humanity.ai' : '/',
   i18n: {
     defaultLocale: 'en',
