@@ -68,8 +68,7 @@ const t = useTranslations(lang);
 		<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 scroll-animate">
 			<div class="text-center mb-16">
 				<h2 class="text-3xl sm:text-4xl font-bold text-slate-900 mb-4">{t('executive.title')}</h2>
-				<p class="text-lg text-slate-600 max-w-3xl mx-auto">
-					{t('executive.subtitle').replace('2025 Global Digital Collaboration Conference', '<a href="https://globaldigitalcollaboration.org/" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800 underline">2025 Global Digital Collaboration Conference</a>')}
+				<p class="text-lg text-slate-600 max-w-3xl mx-auto" set:html={t('executive.subtitle').replace('2025 Global Digital Collaboration Conference', '<a href="https://globaldigitalcollaboration.org/" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800 underline">2025 Global Digital Collaboration Conference</a>')}>
 				</p>
 			</div>
 			
